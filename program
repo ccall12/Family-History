@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
+<style>
+div {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+</style>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body ng-app="myApp" ng-controller="todoCtrl">
-
+<div>
 <h2>My Family History List</h2>
 
 <form ng-submit="todoAdd()">
@@ -19,7 +28,7 @@
 </form>
 
 <br>
-
+</div>
 <div ng-repeat="x in todoList">
     <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
 </div>
@@ -44,7 +53,9 @@ app.controller('todoCtrl', function($scope) {
         });
     };
 });
+
 </script>
+
 
 </body>
 </html>
